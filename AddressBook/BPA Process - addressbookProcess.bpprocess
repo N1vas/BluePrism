@@ -1,0 +1,55 @@
+﻿<process name="addressbookProcess" version="1.0" bpversion="6.9.0.26970" narrative="process for address book is created" byrefcollection="true" preferredid="7cbd7ced-ee70-44f0-aa4d-f15b3e411a96" published="true">
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="dc275b91-4374-4be0-873c-7f674936d1bc" name="Start" type="Start">
+    <display x="15" y="-165" />
+    <onsuccess>91bf51a6-52cf-4d5b-9515-b0031ec60319</onsuccess>
+  </stage>
+  <stage stageid="08e3018b-0438-4889-b857-19f4a35707bf" name="End" type="End">
+    <display x="15" y="165" />
+  </stage>
+  <stage stageid="428de4d3-11ca-4110-885c-8b05a7759349" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="91bf51a6-52cf-4d5b-9515-b0031ec60319" name="addressbookObject::Set Connection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-105" />
+    <onsuccess>e985f0b5-9449-4c4f-8a01-6c1356bb9392</onsuccess>
+    <resource object="addressbookObject" action="Set Connection" />
+  </stage>
+  <stage stageid="e985f0b5-9449-4c4f-8a01-6c1356bb9392" name="addressbookObject::AddData" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-60" />
+    <onsuccess>a3e9fe65-5a77-469b-b234-ed7c498817cd</onsuccess>
+    <resource object="addressbookObject" action="AddData" />
+  </stage>
+  <stage stageid="a3e9fe65-5a77-469b-b234-ed7c498817cd" name="addressbookObject::ReadData" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" />
+    <onsuccess>7775dbe3-c8a8-4075-854e-108c500aa62b</onsuccess>
+    <resource object="addressbookObject" action="ReadData" />
+  </stage>
+  <stage stageid="7775dbe3-c8a8-4075-854e-108c500aa62b" name="addressbookObject::UpdateData" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <onsuccess>16422188-c1fb-42a6-9217-e4b1a81bbf42</onsuccess>
+    <resource object="addressbookObject" action="UpdateData" />
+  </stage>
+  <stage stageid="16422188-c1fb-42a6-9217-e4b1a81bbf42" name="addressbookObject::DeleteData" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="75" />
+    <onsuccess>8888baf1-ab81-445b-920b-bcef9d9ba595</onsuccess>
+    <resource object="addressbookObject" action="DeleteData" />
+  </stage>
+  <stage stageid="8888baf1-ab81-445b-920b-bcef9d9ba595" name="addressbookObject::writedataintoExcelsheet" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <onsuccess>08e3018b-0438-4889-b857-19f4a35707bf</onsuccess>
+    <resource object="addressbookObject" action="writedataintoExcelsheet" />
+  </stage>
+</process>
