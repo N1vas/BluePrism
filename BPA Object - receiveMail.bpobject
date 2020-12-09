@@ -1,0 +1,225 @@
+﻿<process name="receiveMail" version="1.0" bpversion="6.9.0.26970" narrative="receiving mails" byrefcollection="true" type="object" runmode="Exclusive" preferredid="cd736716-5e87-47de-9da0-f268b4aa28e7">
+  <appdef>
+    <element name="Application Root">
+      <id>db558ccf-3c0c-403a-9b82-141f9f21d739</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="bca9f392-48f3-4dfe-9d88-cfdf01e0be27" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="fb9adbb6-1e45-4c57-8bc5-760d4910c1a7" type="Normal" published="False">
+    <name>MailPart</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="e38f6e5b-440a-43d6-81b4-729ad0cf40de" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>e9d89da8-9eb0-42dd-bce8-26af45696afc</onsuccess>
+  </stage>
+  <stage stageid="e9d89da8-9eb0-42dd-bce8-26af45696afc" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="fc78e17a-a52b-4ff0-9be6-c4c8b3e18ac6" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="26a95bb5-5bb7-4fc0-802b-4ea6edb0cffa" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>bca9f392-48f3-4dfe-9d88-cfdf01e0be27</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="4167146b-e3cc-469f-bd36-85fea4e2117a" name="Start" type="Start">
+    <subsheetid>bca9f392-48f3-4dfe-9d88-cfdf01e0be27</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>b25261e8-e8b1-4c0d-917f-1966faac8e35</onsuccess>
+  </stage>
+  <stage stageid="b25261e8-e8b1-4c0d-917f-1966faac8e35" name="End" type="End">
+    <subsheetid>bca9f392-48f3-4dfe-9d88-cfdf01e0be27</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="ceb324ea-218b-457b-9e6f-851a5fd21ce8" name="MailPart" type="SubSheetInfo">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="e3cfd7c6-b097-4953-95af-bdc7cbf193d3" name="Start" type="Start">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit />
+    <display x="15" y="-180" />
+    <onsuccess>63f24639-560f-4110-833e-f79c1cacfad3</onsuccess>
+  </stage>
+  <stage stageid="affbd19a-f0bd-4aba-a40e-42a49a4f7afe" name="End" type="End">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="bc63abe7-cc20-45b3-8862-fc17e869e524" name="" type="Note">
+    <subsheetid>bca9f392-48f3-4dfe-9d88-cfdf01e0be27</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="c5f23a12-4e45-4d85-aab9-6df1fd1df7d5" name="" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="63f24639-560f-4110-833e-f79c1cacfad3" name="Email - POP3/SMTP::Configure" type="Action">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="150" y="-180" />
+    <inputs>
+      <input type="text" name="Username" friendlyname="Username" narrative="The POP3 and SMTP Username" expr="&quot;ggj.nivas.18@gmail.com&quot;" />
+      <input type="password" name="Password" friendlyname="Password" narrative="The POP3 and SMTP Password" expr="&quot;nivasthink1&quot;" />
+      <input type="text" name="POP3 Server" friendlyname="POP3 Server" narrative="The POP3 Server address e.g. pop.domain.com" expr="&quot;pop.gmail.com&quot;" />
+      <input type="text" name="SMTP Server" friendlyname="SMTP Server" narrative="The SMTP Server address e.g. smtp.domain.com" expr="&quot;smtp.gmail.com&quot;" />
+      <input type="number" name="POP3 Port" friendlyname="POP3 Port" narrative="The POP3 Port, e.g. 110 or 995" expr="995" />
+      <input type="number" name="SMTP Port" friendlyname="SMTP Port" narrative="The SMTP Port, e.g 25 or 465" expr="587" />
+      <input type="flag" name="POP3 UseSSL" friendlyname="POP3 UseSSL" narrative="Whether to use SSL for POP3" expr="True" />
+      <input type="flag" name="SMTP UseSSL" friendlyname="SMTP UseSSL" narrative="Whether to use SSL for SMTP" expr="True" />
+    </inputs>
+    <onsuccess>5aebe459-1800-42c3-a43e-bcc9ffc270bf</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Configure" />
+  </stage>
+  <stage stageid="5aebe459-1800-42c3-a43e-bcc9ffc270bf" name="Email - POP3/SMTP::List Messages" type="Action">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="150" y="-135" />
+    <outputs>
+      <output type="collection" name="Emails" friendlyname="Emails" stage="Emails" />
+    </outputs>
+    <onsuccess>b598ad07-53aa-4388-be2c-f20013f23cc3</onsuccess>
+    <resource object="Email - POP3/SMTP" action="List Messages" />
+  </stage>
+  <stage stageid="b598ad07-53aa-4388-be2c-f20013f23cc3" name="Loop Start1" type="LoopStart">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit />
+    <display x="150" y="-90" />
+    <onsuccess>3e3651db-fcfd-40da-8c2e-efd379ec53a9</onsuccess>
+    <groupid>60ed8f7f-5dac-4ed9-be69-bd97e3e372b7</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Emails</loopdata>
+  </stage>
+  <stage stageid="c30d3ebe-90c3-4976-b06c-97800039bbdf" name="Loop End1" type="LoopEnd">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit />
+    <display x="150" y="90" />
+    <onsuccess>affbd19a-f0bd-4aba-a40e-42a49a4f7afe</onsuccess>
+    <groupid>60ed8f7f-5dac-4ed9-be69-bd97e3e372b7</groupid>
+  </stage>
+  <stage stageid="3e3651db-fcfd-40da-8c2e-efd379ec53a9" name="Email - POP3/SMTP::Get Message" type="Action">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="150" y="-45" />
+    <inputs>
+      <input type="text" name="MessageID" friendlyname="MessageID" narrative="The ID of the message to retrieve." expr="[Emails.MessageID]" />
+      <input type="flag" name="HTMLPreferred" friendlyname="HTMLPreferred" narrative="Return HTML content in preference to plain text (multipart messages only)" expr="False" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Body" friendlyname="Body" narrative="The email body" stage="Body" />
+      <output type="text" name="Content-Type" friendlyname="Content-Type" narrative="The content type of the returned body (e.g. text/plain)" stage="Content-Type" />
+    </outputs>
+    <onsuccess>7cc9ebc2-65d2-4329-a962-5e358740a3ac</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Get Message" />
+  </stage>
+  <stage stageid="7cc9ebc2-65d2-4329-a962-5e358740a3ac" name="Calc1" type="Calculation">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit />
+    <display x="150" y="0" />
+    <onsuccess>29740690-250b-4c7e-8d42-40b0ca1aa611</onsuccess>
+    <calculation expression="[Body]" stage="EmailBody.Body" />
+  </stage>
+  <stage stageid="29740690-250b-4c7e-8d42-40b0ca1aa611" name="Collections::Add Row" type="Action">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit onsuccess="true" />
+    <display x="150" y="45" />
+    <inputs>
+      <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;EmailBody&quot;" />
+    </inputs>
+    <onsuccess>c30d3ebe-90c3-4976-b06c-97800039bbdf</onsuccess>
+    <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Add Row" />
+  </stage>
+  <stage stageid="dec45dc2-7ccc-4cfd-8219-df8b32fc831a" name="EmailBody" type="Collection">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <loginhibit />
+    <display x="270" y="45" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Body" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Body" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="3fcdffe5-fc90-4b4b-b744-4799668721f9" name="Emails" type="Collection">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <display x="225" y="-135" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="302ec0c6-3ab2-439e-9820-c287b05698ed" name="Content-Type" type="Data">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <display x="225" y="-45" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2a379b44-c0c3-47e1-b584-3af0bcb52f54" name="Body" type="Data">
+    <subsheetid>fb9adbb6-1e45-4c57-8bc5-760d4910c1a7</subsheetid>
+    <display x="300" y="-45" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
